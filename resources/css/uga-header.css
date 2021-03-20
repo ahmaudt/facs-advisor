@@ -1,0 +1,522 @@
+/*!
+ * Bootstrap v4.2.1 (https://getbootstrap.com/)
+ * Copyright 2011-2018 The Bootstrap Authors
+ * Copyright 2011-2018 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+ @import url("//fonts.googleapis.com/css?family=Merriweather+Sans:300|Merriweather:300");
+
+ .ugaheader__wordmark, .ugaheader__nav-container {
+   position: relative;
+   width: 100%;
+   padding-right: 15px;
+   padding-left: 15px; }
+ 
+ .ugaheader__wordmark, .ugaheader__nav-container {
+   -webkit-flex-basis: 0;
+       -ms-flex-preferred-size: 0;
+           flex-basis: 0;
+   -webkit-box-flex: 1;
+   -webkit-flex-grow: 1;
+       -ms-flex-positive: 1;
+           flex-grow: 1;
+   max-width: 100%; }
+ 
+ .ugaheader__wordmark {
+   -webkit-box-flex: 0;
+   -webkit-flex: 0 0 auto;
+       -ms-flex: 0 0 auto;
+           flex: 0 0 auto;
+   width: auto;
+   max-width: 100%; }
+ 
+ @supports ((position: -webkit-sticky) or (position: sticky)) { }
+ 
+ .ugaheader {
+   padding: 0;
+   background: #FFFFFF;
+   background-size: cover;
+   font-family: "Merriweather", Georgia, "Times New Roman", Times, serif;
+   font-size: 14px;
+   line-height: 1; }
+   .ugaheader--border {
+     border-width: 0 0 3px;
+     border-style: solid; }
+     .ugaheader--border-red {
+       border-color: #BA0C2F; }
+     .ugaheader--border-black {
+       border-color: #000000; }
+     .ugaheader--border-white {
+       border-color: #FFFFFF; }
+   .ugaheader a {
+     color: #000000; }
+     @media (min-width: 768px) {
+       .ugaheader a {
+         color: inherit; } }
+     .ugaheader a:focus {
+       outline-color: #aaa; }
+   .ugaheader--red {
+     background: #BA0C2F;
+     color: #FFFFFF; }
+   .ugaheader--black {
+     background: #000000;
+     color: #FFFFFF; }
+   .ugaheader--red a:focus, .ugaheader--black a:focus {
+     outline-color: rgba(255, 255, 255, 0.1); }
+ 
+ .ugaheader__container {
+   -webkit-box-sizing: border-box;
+           box-sizing: border-box;
+   width: 100%;
+   padding-right: 15px;
+   padding-left: 15px;
+   margin-right: auto;
+   margin-left: auto; }
+   @media (min-width: 576px) {
+     .ugaheader__container--max-widths {
+       max-width: 540px; } }
+   @media (min-width: 768px) {
+     .ugaheader__container--max-widths {
+       max-width: 720px; } }
+   @media (min-width: 992px) {
+     .ugaheader__container--max-widths {
+       max-width: 960px; } }
+   @media (min-width: 1200px) {
+     .ugaheader__container--max-widths {
+       max-width: 1140px; } }
+ 
+ .ugaheader__row {
+   display: -webkit-box;
+   display: -webkit-flex;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-flex-wrap: wrap;
+       -ms-flex-wrap: wrap;
+           flex-wrap: wrap;
+   margin-right: -15px;
+   margin-left: -15px; }
+   .ugaheader__row--primary {
+     -webkit-box-align: center;
+     -webkit-align-items: center;
+         -ms-flex-align: center;
+             align-items: center;
+     margin-bottom: 1em; }
+   .ugaheader__row--secondary {
+     -webkit-box-align: center;
+     -webkit-align-items: center;
+         -ms-flex-align: center;
+             align-items: center; }
+ 
+ .ugaheader__wordmark {
+   padding-top: 16px;
+   padding-bottom: 16px; }
+   .ugaheader__wordmark--shield {
+     padding-top: 10px;
+     padding-bottom: 10px; }
+ 
+ .ugaheader__wordmark-link {
+   font: 0/0 a;
+   color: transparent;
+   text-shadow: none;
+   background-color: transparent;
+   border: 0;
+   display: block;
+   width: 148px;
+   height: 8px;
+   background: transparent url("../img/GEORGIA-HW-1CR.svg") left center no-repeat;
+   background-size: contain; }
+   .ugaheader__wordmark--shield .ugaheader__wordmark-link {
+     width: 177px;
+     height: 20px;
+     background-image: url("../img/GEORGIA-XH-FC.svg"); }
+   .ugaheader--red .ugaheader__wordmark-link,
+   .ugaheader--black .ugaheader__wordmark-link {
+     background-image: url("../img/GEORGIA-HW-W.svg"); }
+   .ugaheader--red .ugaheader__wordmark--shield .ugaheader__wordmark-link,
+   .ugaheader--black .ugaheader__wordmark--shield .ugaheader__wordmark-link {
+     background-image: url("../img/GEORGIA-XH-CW.svg"); }
+ 
+ .ugaheader__nav-container {
+   position: relative;
+   display: -webkit-box;
+   display: -webkit-flex;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-orient: horizontal;
+   -webkit-box-direction: normal;
+   -webkit-flex-direction: row;
+       -ms-flex-direction: row;
+           flex-direction: row;
+   -webkit-box-pack: end;
+   -webkit-justify-content: flex-end;
+       -ms-flex-pack: end;
+           justify-content: flex-end;
+   -webkit-align-content: center;
+       -ms-flex-line-pack: center;
+           align-content: center; }
+ 
+ .ugaheader__nav {
+   display: -webkit-box;
+   display: -webkit-flex;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-orient: horizontal;
+   -webkit-box-direction: normal;
+   -webkit-flex-direction: row;
+       -ms-flex-direction: row;
+           flex-direction: row;
+   -webkit-flex-wrap: nowrap;
+       -ms-flex-wrap: nowrap;
+           flex-wrap: nowrap;
+   -webkit-box-align: stretch;
+   -webkit-align-items: stretch;
+       -ms-flex-align: stretch;
+           align-items: stretch; }
+   @media (max-width: 767.98px) {
+     .ugaheader__nav {
+       position: absolute;
+       z-index: 10;
+       top: 40px;
+       display: none;
+       width: 200px;
+       max-width: 100%;
+       padding: 10px;
+       background: #fafafa;
+       border: 2px solid #e6e6e6;
+       border-radius: 2px; }
+       .ugaheader__nav-menu-toggle[aria-expanded=true] + .ugaheader__nav {
+         display: block; } }
+   .ugaheader__nav a {
+     font-size: 14px;
+     line-height: 1.2;
+     text-decoration: none;
+     -webkit-transition: all 100ms ease-in;
+     transition: all 100ms ease-in;
+     -webkit-transition-property: background, opacity, border-color, color;
+     transition-property: background, opacity, border-color, color; }
+ 
+ .ugaheader__nav-menu-toggle {
+   -webkit-align-self: center;
+       -ms-flex-item-align: center;
+           align-self: center;
+   background: transparent;
+   border: none;
+   padding: 4px;
+   color: rgba(0, 0, 0, 0.667);
+   font-size: 16px;
+   -webkit-transition: color 100ms ease-in;
+   transition: color 100ms ease-in; }
+   .ugaheader__nav-menu-toggle:hover, .ugaheader__nav-menu-toggle:active, .ugaheader__nav-menu-toggle:focus {
+     color: #000000; }
+   .ugaheader__nav-menu-toggle:focus {
+     outline-color: #aaa; }
+   .ugaheader--red .ugaheader__nav-menu-toggle,
+   .ugaheader--black .ugaheader__nav-menu-toggle {
+     color: rgba(255, 255, 255, 0.8); }
+     .ugaheader--red .ugaheader__nav-menu-toggle:hover, .ugaheader--red .ugaheader__nav-menu-toggle:active, .ugaheader--red .ugaheader__nav-menu-toggle:focus, .ugaheader--black .ugaheader__nav-menu-toggle:hover, .ugaheader--black .ugaheader__nav-menu-toggle:active, .ugaheader--black .ugaheader__nav-menu-toggle:focus {
+       color: #FFFFFF; }
+     .ugaheader--red .ugaheader__nav-menu-toggle:focus,
+     .ugaheader--black .ugaheader__nav-menu-toggle:focus {
+       outline-color: rgba(255, 255, 255, 0.1); }
+   .ugaheader__nav-menu-toggle.open {
+     -webkit-transform: rotate(180deg);
+             transform: rotate(180deg); }
+   @media (min-width: 768px) {
+     .ugaheader__nav-menu-toggle {
+       display: none; } }
+ 
+ /* General reset for list elements in the header */
+ .ugaheader__nav-list {
+   display: -webkit-box;
+   display: -webkit-flex;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-orient: vertical;
+   -webkit-box-direction: normal;
+   -webkit-flex-direction: column;
+       -ms-flex-direction: column;
+           flex-direction: column;
+   -webkit-flex-wrap: nowrap;
+       -ms-flex-wrap: nowrap;
+           flex-wrap: nowrap;
+   margin: 0;
+   padding: 0;
+   list-style: none; }
+   @media (min-width: 768px) {
+     .ugaheader__nav-list {
+       -webkit-box-orient: horizontal;
+       -webkit-box-direction: normal;
+       -webkit-flex-direction: row;
+           -ms-flex-direction: row;
+               flex-direction: row;
+       -webkit-box-align: stretch;
+       -webkit-align-items: stretch;
+           -ms-flex-align: stretch;
+               align-items: stretch;
+       padding: 0 5px; }
+       .ugaheader__nav-list:first-child {
+         padding-left: 0; }
+       .ugaheader__nav-list:last-child {
+         padding-right: 0; } }
+   .ugaheader__nav-list .ugaheader__nav-list-element {
+     display: -webkit-box;
+     display: -webkit-flex;
+     display: -ms-flexbox;
+     display: flex;
+     -webkit-box-orient: vertical;
+     -webkit-box-direction: normal;
+     -webkit-flex-direction: column;
+         -ms-flex-direction: column;
+             flex-direction: column; }
+     @media (min-width: 768px) {
+       .ugaheader__nav-list .ugaheader__nav-list-element {
+         -webkit-box-orient: horizontal;
+         -webkit-box-direction: normal;
+         -webkit-flex-direction: row;
+             -ms-flex-direction: row;
+                 flex-direction: row; } }
+   @media (min-width: 768px) {
+     .ugaheader__nav-list .ugaheader__nav-list-link {
+       font-size: 12px;
+       line-height: 1; } }
+ 
+ .ugaheader__nav-links {
+   margin-bottom: 10px; }
+   @media (min-width: 768px) {
+     .ugaheader__nav-links {
+       margin-bottom: 0; } }
+   .ugaheader__nav-links .ugaheader__nav-list-link {
+     padding: 8px 4px;
+     color: #333333; }
+     .ugaheader__nav-links .ugaheader__nav-list-link:hover {
+       color: #000000; }
+     @media (min-width: 768px) {
+       .ugaheader__nav-links .ugaheader__nav-list-link {
+         display: -webkit-box;
+         display: -webkit-flex;
+         display: -ms-flexbox;
+         display: flex;
+         -webkit-box-align: center;
+         -webkit-align-items: center;
+             -ms-flex-align: center;
+                 align-items: center;
+         padding: 0 12px;
+         color: inherit; }
+         .ugaheader__nav-links .ugaheader__nav-list-link:hover {
+           background: rgba(0, 0, 0, 0.05);
+           color: inherit; }
+           .ugaheader--red .ugaheader__nav-links .ugaheader__nav-list-link:hover {
+             background: rgba(0, 0, 0, 0.1); }
+           .ugaheader--black .ugaheader__nav-links .ugaheader__nav-list-link:hover {
+             background: rgba(255, 255, 255, 0.1); } }
+ 
+ .ugaheader__nav-links .ugaheader__nav-list-element {
+   -webkit-box-align: stretch;
+   -webkit-align-items: stretch;
+       -ms-flex-align: stretch;
+           align-items: stretch;
+   border-width: 0 0 1px;
+   border-style: solid;
+   border-color: rgba(0, 0, 0, 0.1); }
+   .ugaheader__nav-links .ugaheader__nav-list-element:last-child {
+     border-width: 0; }
+   @media (min-width: 768px) {
+     .ugaheader__nav-links .ugaheader__nav-list-element {
+       padding: 0;
+       border-width: 0 1px;
+       border-color: rgba(0, 0, 0, 0.2); }
+       .ugaheader__nav-links .ugaheader__nav-list-element:last-child {
+         border-width: 0 1px 0 0; } }
+ 
+ @media (min-width: 768px) {
+   .ugaheader--red .ugaheader__nav-links .ugaheader__nav-list-element,
+   .ugaheader--black .ugaheader__nav-links .ugaheader__nav-list-element {
+     border-color: rgba(255, 255, 255, 0.2); } }
+ 
+ .ugaheader__nav-buttons {
+   margin-bottom: 5px; }
+   @media (min-width: 768px) {
+     .ugaheader__nav-buttons {
+       margin-bottom: 0; } }
+   .ugaheader__nav-buttons .ugaheader__nav-list-element {
+     margin-bottom: 5px; }
+     @media (min-width: 768px) {
+       .ugaheader__nav-buttons .ugaheader__nav-list-element {
+         -webkit-box-align: center;
+         -webkit-align-items: center;
+             -ms-flex-align: center;
+                 align-items: center;
+         padding: 0 8px;
+         margin-bottom: 0; } }
+   .ugaheader__nav-buttons .ugaheader__nav-list-link {
+     display: block;
+     display: -webkit-box;
+     display: -webkit-flex;
+     display: -ms-flexbox;
+     display: flex;
+     -webkit-box-align: center;
+     -webkit-align-items: center;
+         -ms-flex-align: center;
+             align-items: center;
+     padding: 6px;
+     border: solid 1px #a20a29;
+     border-radius: 2px;
+     background: rgba(186, 12, 47, 0.95);
+     color: #FFFFFF;
+     font-weight: 600; }
+     .ugaheader__nav-buttons .ugaheader__nav-list-link:hover {
+       border-color: #000000;
+       background: #000000; }
+     @media (max-width: 767.98px) {
+       .ugaheader__nav-buttons .ugaheader__nav-list-link {
+         border-width: 0; }
+         .ugaheader__nav-buttons .ugaheader__nav-list-link:hover {
+           background: #000000;
+           border-color: #000000;
+           color: #FFFFFF; } }
+     @media (min-width: 768px) {
+       .ugaheader--red .ugaheader__nav-buttons .ugaheader__nav-list-link {
+         border-color: #FFFFFF;
+         background: rgba(255, 255, 255, 0.9);
+         color: #000000; }
+         .ugaheader--red .ugaheader__nav-buttons .ugaheader__nav-list-link:hover {
+           border-color: #FFFFFF;
+           background: #FFFFFF; }
+       .ugaheader--black .ugaheader__nav-buttons .ugaheader__nav-list-link {
+         border-color: rgba(255, 255, 255, 0.5);
+         background: #BA0C2F;
+         color: #FFFFFF; }
+         .ugaheader--black .ugaheader__nav-buttons .ugaheader__nav-list-link:hover {
+           border-color: #FFFFFF;
+           background: #FFFFFF;
+           color: #BA0C2F; } }
+ 
+ .ugaheader__nav-icons {
+   display: -webkit-box;
+   display: -webkit-flex;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-orient: horizontal;
+   -webkit-box-direction: normal;
+   -webkit-flex-direction: row;
+       -ms-flex-direction: row;
+           flex-direction: row;
+   margin-bottom: 10px; }
+   @media (min-width: 768px) {
+     .ugaheader__nav-icons {
+       margin-bottom: 0; } }
+   @media (min-width: 768px) {
+     .ugaheader__nav-icons .ugaheader__nav-list-element {
+       -webkit-box-align: center;
+       -webkit-align-items: center;
+           -ms-flex-align: center;
+               align-items: center;
+       padding: 0 1px; } }
+   .ugaheader__nav-icons .ugaheader__nav-list-link {
+     font-size: 20px; }
+     @media (min-width: 768px) {
+       .ugaheader__nav-icons .ugaheader__nav-list-link {
+         display: -webkit-box;
+         display: -webkit-flex;
+         display: -ms-flexbox;
+         display: flex;
+         -webkit-box-align: center;
+         -webkit-align-items: center;
+             -ms-flex-align: center;
+                 align-items: center;
+         opacity: .9; }
+         .ugaheader__nav-icons .ugaheader__nav-list-link:hover {
+           opacity: 1; } }
+ 
+ .ugaheader__search-toggle {
+   display: none;
+   padding: 4px;
+   background: transparent;
+   border: none;
+   color: #000000;
+   font-size: 16px; }
+   .ugaheader__search-toggle:hover {
+     color: #000000; }
+   .ugaheader__search-toggle:focus {
+     outline-color: #aaa; }
+     .ugaheader--red .ugaheader__search-toggle:focus,
+     .ugaheader--black .ugaheader__search-toggle:focus {
+       outline-color: rgba(255, 255, 255, 0.1); }
+   .ugaheader--black .ugaheader__search-toggle,
+   .ugaheader--red .ugaheader__search-toggle {
+     color: #FFFFFF; }
+     .ugaheader--black .ugaheader__search-toggle:hover,
+     .ugaheader--red .ugaheader__search-toggle:hover {
+       color: #FFFFFF; }
+   @media (min-width: 768px) {
+     .ugaheader__search-toggle {
+       display: block; } }
+ 
+ .ugaheader__search {
+   position: relative;
+   display: -webkit-box;
+   display: -webkit-flex;
+   display: -ms-flexbox;
+   display: flex;
+   -webkit-box-pack: center;
+   -webkit-justify-content: center;
+       -ms-flex-pack: center;
+           justify-content: center;
+   margin: 0;
+   padding: 0;
+   border: none;
+   background: transparent; }
+ 
+ .ugaheader__search-field {
+   width: 100%;
+   margin-bottom: 0; }
+   @media (min-width: 768px) {
+     .ugaheader__search-field {
+       opacity: 0;
+       -webkit-transition: opacity 100ms ease-in;
+       transition: opacity 100ms ease-in;
+       height: 0;
+       overflow: none; }
+       .ugaheader__search-toggle[aria-expanded=true] + .ugaheader__search-field {
+         opacity: 1;
+         height: auto;
+         overflow: auto; } }
+ 
+ .ugaheader__search-input {
+   display: block;
+   width: 100%;
+   z-index: 100;
+   border-radius: 2px;
+   border-width: 1px;
+   border-style: solid;
+   border-color: #e6e6e6;
+   padding: 4px 8px;
+   color: #554F47;
+   font-family: "Merriweather Sans", "Tahoma", "Helvetica Neue", Arial, sans-serif;
+   font-size: 14px;
+   line-height: 1.5;
+   background: #ebebeb; }
+   .ugaheader__search-input:focus {
+     border-color: #d9d9d9;
+     outline-color: gray;
+     outline-width: 0px; }
+   @media (min-width: 768px) {
+     .ugaheader__search-input {
+       position: absolute;
+       right: 0;
+       bottom: -33px;
+       width: 200px;
+       background: #f7f7f7;
+       border-width: 2px;
+       border-color: #e0e0e0; }
+       .ugaheader__search-input:focus {
+         border-color: #bfbfbf; } }
+ 
+ .ugaheader__form-label,
+ .ugaheader__search-submit {
+   font: 0/0 a;
+   color: transparent;
+   text-shadow: none;
+   background-color: transparent;
+   border: 0; }
+ 
