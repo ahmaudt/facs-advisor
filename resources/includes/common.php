@@ -8,19 +8,20 @@ function escape($html) {
 }
 
 // identify the advising term for input to form
+date_default_timezone_set('America/New_York');
 $num_month = date("n");
 if ($num_month >= 2 && $num_month < 8) {
-    $advisingTerm = "Fall-".(date("Y"));
+    $advisingTerm = "Fall ".(date("Y"));
 } else {
-    $advisingTerm = "Spring-".(date("Y") +1);
+    $advisingTerm = "Spring ".(date("Y") +1);
 }
 
 if ($num_month >= 2 && $num_month < 5) {
-    $currentTerm = "Spring-".(date("Y"));
+    $currentTerm = "Spring ".(date("Y"));
 } elseif ($num_month >= 4 && $num_month < 8) {
-    $currentTerm = "Summer-".(date("Y"));
+    $currentTerm = "Summer ".(date("Y"));
 } else {
-    $currentTerm = "Fall-".(date("Y"));
+    $currentTerm = "Fall ".(date("Y"));
 }
 
  
