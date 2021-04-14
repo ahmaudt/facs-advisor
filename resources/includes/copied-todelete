@@ -1,0 +1,8 @@
+$stmt = $this->conn->prepare("SELECT studentId FROM students WHERE myid=?"); 
+                    $data = $this->conn->query("SELECT preferred_name, last_name, myid FROM students")->fetchAll(PDO::FETCH_GROUP);
+                    $stmt->execute([$this->myid]); 
+                    if ($student_id = $stmt->fetchColumn()) {
+                        $sql = "UPDATE students SET `grad_term` = (SELECT `termId` FROM `academic_terms` WHERE '$this->gradTerm' = CONCAT(`term`, ' ', `year`)) WHERE  $student_id = `studentId`";
+                    } else {
+                    $sql = "INSERT INTO students (`preferred_name`, `last_name`, `myid`, `majorId`, `matric_term`, `grad_term`) VALUES ('$this->preferredName', '$this->lastName', '$this->myid', (SELECT `majorId` FROM `majors` WHERE '$this->major' = `name`), (SELECT `termId` FROM `academic_terms` WHERE '$this->matricTerm' = CONCAT(`term`, ' ', `year`)), (SELECT `termId` FROM `academic_terms` WHERE '$this->gradTerm' = CONCAT(`term`, ' ', `year`))) ON DUPLICATE KEY UPDATE `grad_term` = (SELECT `termId` FROM `academic_terms` WHERE '$this->gradTerm' = CONCAT(`term`, ' ', `year`))";
+                    }
