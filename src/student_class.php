@@ -1,5 +1,98 @@
 <?php
 
+function var_dump_pre($mixed = null) {
+    echo '<pre>';
+    var_dump($mixed);
+    echo '</pre>';
+    return null;
+  }
+
+  function var_log(&$varInput, $var_name='', $reference='', $method = '=', $sub = false) {
+
+    static $output ;
+    static $depth ;
+
+    if ( $sub == false ) {
+        $output = '' ;
+        $depth = 0 ;
+        $reference = $var_name ;
+        $var = serialize( $varInput ) ;
+        $var = unserialize( $var ) ;
+    } else {
+        ++$depth ;
+        $var =& $varInput ;
+       
+    }
+       
+    // constants
+    $nl = "\n" ;
+    $block = 'a_big_recursion_protection_block';
+   
+    $c = $depth ;
+    $indent = '' ;
+    while( $c -- > 0 ) {
+        $indent .= '|  ' ;
+    }
+
+    // if this has been parsed before
+    if ( is_array($var) && isset($var[$block])) {
+   
+        $real =& $var[ $block ] ;
+        $name =& $var[ 'name' ] ;
+        $type = gettype( $real ) ;
+        $output .= $indent.$var_name.' '.$method.'& '.($type=='array'?'Array':get_class($real)).' '.$name.$nl;
+   
+    // havent parsed this before
+    } else {
+
+        // insert recursion blocker
+        $var = Array( $block => $var, 'name' => $reference );
+        $theVar =& $var[ $block ] ;
+
+        // print it out
+        $type = gettype( $theVar ) ;
+        switch( $type ) {
+       
+            case 'array' :
+                $output .= $indent . $var_name . ' '.$method.' Array ('.$nl;
+                $keys=array_keys($theVar);
+                foreach($keys as $name) {
+                    $value=&$theVar[$name];
+                    var_log($value, $name, $reference.'["'.$name.'"]', '=', true);
+                }
+                $output .= $indent.')'.$nl;
+                break ;
+           
+            case 'object' :
+                $output .= $indent.$var_name.' = '.get_class($theVar).' {'.$nl;
+                foreach($theVar as $name=>$value) {
+                    var_log($value, $name, $reference.'->'.$name, '->', true);
+                }
+                $output .= $indent.'}'.$nl;
+                break ;
+           
+            case 'string' :
+                $output .= $indent . $var_name . ' '.$method.' "'.$theVar.'"'.$nl;
+                break ;
+               
+            default :
+                $output .= $indent . $var_name . ' '.$method.' ('.$type.') '.$theVar.$nl;
+                break ;
+               
+        }
+       
+        // $var=$var[$block];
+       
+    }
+   
+    -- $depth ;
+   
+    if( $sub == false )
+        return $output ;
+       
+}
+
+
 class Student
 {
     // TODO: Create instance variables
@@ -63,8 +156,13 @@ class Student
             {
                 try
                 {
-                    $data = $pdo->query("SELECT preferred_name, last_name, (SELECT `term` FROM academic_terms WHERE ), grad_term FROM students WHERE '$this->myid' = myid ")->fetchAll(PDO::FETCH_UNIQUE);
-                    echo "<pre>"; var_dump($data) ;echo "</pre>";
+                    $data = $pdo->query(
+                        "SELECT studentId, preferred_name, last_name, myid, 
+                        (SELECT CONCAT(`term`, ' ', `year`) FROM academic_terms WHERE `matric_term` = `termId`), 
+                        (SELECT CONCAT(`term`, ' ', `year`) FROM academic_terms WHERE `grad_term` = `termId`) FROM students WHERE '$this->myid' = `myid`")->fetchAll(PDO::FETCH_UNIQUE);
+                    // echo "<pre>"; var_dump($data) ;echo "</pre>";
+                    echo "<pre>"; echo var_log($data); echo "</pre>";
+
                 }   catch(PDOException $error)
                     {
                         echo $this->sql . "<br>" . $error->getMessage();

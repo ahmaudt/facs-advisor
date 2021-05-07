@@ -15,6 +15,7 @@ $Extra = new ParsedownExtra();
 
 
 
+
 /**
  * database connection config
  * 
@@ -76,7 +77,7 @@ $student = new Student($preferredName, $lastName, $myid, $major, $matricTerm, $g
         <div class='row'>
             <div class='col-lg-7 mb-5'>
                 <?php
-                $new_plan = new AcademicPlan($_POST['advising_session']['currentTerm'], $_POST['advising_session']['advisingTerm'], $_POST['recommended_courses'], $_POST['alt_courses'], $_POST['petition']);
+                $new_plan = new AcademicPlan($recommended_courses, $alt_courses, $currentTerm, $advising_term);
                 for($i = 1; $i <= 8; $i++) { ?>
                 <?php   
                     // if (!isset($_POST['recommended_courses'][$i]) || empty ($_POST['recommended_courses'][$i])) {
@@ -102,6 +103,7 @@ $student = new Student($preferredName, $lastName, $myid, $major, $matricTerm, $g
     <?php
     $student->saveStudent($pdo);
     $student->getStudent($pdo, $myid);
+    $new_plan->savePlan($pdo);
     // if(isset($_POST['submit'])) 
     // {
     //     try 
@@ -144,7 +146,7 @@ $student = new Student($preferredName, $lastName, $myid, $major, $matricTerm, $g
 
    
 echo "<pre>";var_export($new_plan);echo "</pre>";
-echo "<pre>";var_export($new_plan->recommended_courses);echo "</pre>";
+
 
     ?>
 </div>
